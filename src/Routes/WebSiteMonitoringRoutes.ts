@@ -5,6 +5,7 @@ import WebSiteMonitoringController from '../Controllers/WebSiteMonitoringControl
 const WebSiteMonitoringRoutes = (server: Express) => {
     server.get('/website-Monitoring', WebSiteMonitoringController.get);
     server.get('/website-Monitoring/:urlId', WebSiteMonitoringController.getByUrl);
+    server.delete('/website-Monitoring/', WebSiteMonitoringController.deleteAll);
 };
 
 export default WebSiteMonitoringRoutes;

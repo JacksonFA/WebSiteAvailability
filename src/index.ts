@@ -25,5 +25,5 @@ server.listen(port, host, () => {
     Routes(server);
 
     // Sets monitoring URLs periodically
-    setInterval(monitoring.create, 10000);
+    setInterval(monitoring.create, 60000);
 });

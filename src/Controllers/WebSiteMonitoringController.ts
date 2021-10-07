@@ -17,9 +17,16 @@ const getByUrl = async (req: Request, res: Response, next: NextFunction) => {
     res.status(200).json(result);
 };
 
+const deleteAll = async (req: Request, res: Response, next: NextFunction) => {
+    // Apaga o histórico de monitoramento de URLs
+    await WebSiteMonitoringService.deleteAll();
+    res.status(200).json({ message: 'Histórico de monitoramento apagado com sucesso!' });
+};
+
 const WebSiteMonitoringController = {
     get,
-    getByUrl
+    getByUrl,
+    deleteAll,
 };
 
 export default WebSiteMonitoringController;

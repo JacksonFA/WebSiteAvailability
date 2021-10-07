@@ -53,10 +53,19 @@ const readOneUrl = async (urlId: string) => {
     }
 }
 
+const deleteAll = async () => {
+    try {
+        return await WebSiteMonitoring.deleteMany();
+    } catch (error) {
+        throw new Error(String(error));
+    }
+}
+
 const WebSiteMonitoringService = {
     create,
     read,
     readOneUrl,
+    deleteAll,
 }
 
 export default WebSiteMonitoringService;
